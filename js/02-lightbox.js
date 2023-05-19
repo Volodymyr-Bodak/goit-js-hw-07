@@ -32,3 +32,5 @@ function createNewGallery() {
   
   
   console.log(galleryItems);
+  
+  console.log(galleryItems);
