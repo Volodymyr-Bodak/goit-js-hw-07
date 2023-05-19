@@ -29,6 +29,6 @@ function createNewGallery() {
 
   });
 
-  }
+  
   
   console.log(galleryItems);
