@@ -25,7 +25,6 @@ function createNewGallery() {
     captions: true,
     captionSelector: 'img',
     captionDelay: 250,
-    captionPosition: 'bottom',
     captionsData:'alt'
 
   });
