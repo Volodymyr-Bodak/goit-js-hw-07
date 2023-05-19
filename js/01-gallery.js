@@ -18,10 +18,9 @@ function createNewGallery() {
  
 
   createNewGallery();
-  document.querySelectorAll('a.gallery__link').forEach (item =>
-    item.addEventListener('click', (event)=>{
+   gallery.addEventListener('click', (event)=>{
       event.preventDefault();
-    const modal = basicLightbox.create(`<img src="${item.querySelector('img').dataset.source}">`);
+    const modal = basicLightbox.create(`<img src="${gallery.querySelector('img').dataset.source}">`);
     modal.show();
     if (modal.visible() === true) {
       document.addEventListener('keydown', function(event) {
@@ -33,7 +32,8 @@ function createNewGallery() {
       return;
      }
 
-  }));
+  });
+
 
   
 
