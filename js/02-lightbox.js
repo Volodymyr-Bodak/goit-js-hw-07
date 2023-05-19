@@ -19,11 +19,7 @@ function createNewGallery() {
   createNewGallery();
 
   
-  document.querySelectorAll('a.gallery__link').forEach(item => {
-    item.addEventListener('click', event => {
-      event.preventDefault();
-    });
-  });
+
 
   const modal = new SimpleLightbox('.gallery a', {
     captions: true,
@@ -33,15 +29,7 @@ function createNewGallery() {
     captionsData:'alt'
 
   });
-  modal.show();
 
-  if (modal.visible() === true) {
-    document.addEventListener('keydown', function(event) {
-      if (event.key === "Escape") {
-        modal.close();
-      }
-    });
-  } else {
   }
   
   console.log(galleryItems);
