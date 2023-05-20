@@ -18,28 +18,36 @@ function createNewGallery() {
  
 
   createNewGallery();
-   gallery.addEventListener('click', (event)=>{
+  
+    gallery.addEventListener('click', (event)=>{
       event.preventDefault();
-    const modal = basicLightbox.create(`<img src="${gallery.querySelector('img').dataset.source}">`);
+      if (event.target.classList.contains('gallery__image')) {
+    const modal = basicLightbox.create(`<img src="${event.target.dataset.source}">`,{
+      onShow: () => {
+    
+        document.addEventListener('keydown', EscapeKeyPress);
+      },
+      onClose: () => {
+        
+        document.removeEventListener('keydown', EscapeKeyPress);
+      }
+    });
+      
     modal.show();
-    if (modal.visible() === true) {
-      document.addEventListener('keydown', function(event) {
-        if (event.key === "Escape") {
-          modal.close();
-        }
-      });
-     } else {
+    
+    function EscapeKeyPress (event){
+      if (event.key === "Escape") {
+       modal.close();
+      }
+      
+      else {
       return;
      }
+    }
 
-  });
-
+      }});
 
   
 
  
   
- 
-
-
-console.log(document.querySelectorAll('a.gallery__link'));
