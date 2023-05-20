@@ -13,7 +13,7 @@ function createNewGallery() {
     }).join('');
   
     gallery.insertAdjacentHTML('beforeend', galleryMarkup);
-  }
+}
  
   
   createNewGallery();
@@ -22,15 +22,9 @@ function createNewGallery() {
 
 
   const modal = new SimpleLightbox('.gallery a', {
-    captions: true,
-    captionSelector: 'img',
     captionDelay: 250,
     captionsData:'alt'
 
   });
 
   
-  
-  console.log(galleryItems);
-  
-  console.log(galleryItems);
